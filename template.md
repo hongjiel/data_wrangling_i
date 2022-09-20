@@ -124,3 +124,45 @@ Data summary
 | pups_born_alive |         0 |          1.00 |  7.35 | 1.76 |  3.0 |  6.00 |  8.00 |  8.00 | 11.0 | ▁▃▂▇▁ |
 | pups_dead_birth |         0 |          1.00 |  0.33 | 0.75 |  0.0 |  0.00 |  0.00 |  0.00 |  4.0 | ▇▂▁▁▁ |
 | pups_survive    |         0 |          1.00 |  6.41 | 2.05 |  1.0 |  5.00 |  7.00 |  8.00 |  9.0 | ▁▃▂▇▇ |
+
+‘read_csv’ options ..
+
+## Other file formats
+
+We need to read in an excel spreadsheet …
+
+``` r
+mlb_df = read_excel("data/mlb11.xlsx")
+```
+
+``` r
+View(mlb_df)
+```
+
+``` r
+lotr_words_df =
+  read_excel(
+    "data/LotR_Words.xlsx",
+    range = "B3:B6"
+  )
+```
+
+## Still more formats …
+
+Read in a SAS dataset.
+
+``` r
+pulse_df = read_sas("data/public_pulse_data.sas7bdat")
+```
+
+## Data export
+
+``` r
+write_csv(lotr_words_df, file = "results/lotr_words_df.csv")
+```
+
+## Why not base r???
+
+``` r
+dont_do_this_df = read.csv("data/FAS_litters.csv")
+```
